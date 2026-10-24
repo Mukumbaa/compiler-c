@@ -1,0 +1,15 @@
+fn print_bin(n) {
+    if (n > 1) {
+        bit = n % 2;
+        resto = (n - bit) / 2;
+        print_bin(resto);
+    }
+    // Stampa il singolo bit SENZA andare a capo!
+    print(n % 2);
+}
+
+scan(numero);
+
+print("Il numero ", numero, " in binario e': ");
+print_bin(numero);
+print("\n");

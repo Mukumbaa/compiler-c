@@ -1,0 +1,4 @@
+// EXPECT_ERROR
+x = 10;
+break;
+print(x,"\n");

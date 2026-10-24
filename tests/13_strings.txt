@@ -1,0 +1,20 @@
+// EXPECT:
+// Benvenuto nel programma!
+// Il risultato di 2 + 2 e': 4
+// Contatore: 1
+// Contatore: 2
+// Contatore: 3
+// Arrivederci!
+
+print("Benvenuto nel programma!","\n");
+
+ris = 2 + 2;
+print("Il risultato di 2 + 2 e': ", ris,"\n");
+
+i = 1;
+while (i <= 3) {
+    print("Contatore: ", i,"\n");
+    i = i + 1;
+}
+
+print("Arrivederci!","\n");

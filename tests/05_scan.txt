@@ -1,0 +1,10 @@
+// INPUT:
+// 20
+// EXPECT:
+// 40
+scan(a);
+if (a >= 18) {
+    print(a * 2,"\n");
+} else {
+    print(0,"\n");
+}

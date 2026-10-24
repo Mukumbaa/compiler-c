@@ -1,0 +1,19 @@
+// EXPECT:
+// 15
+// 120
+i = 1;
+somma = 0;
+while (i <= 5) {
+    somma = somma + i;
+    i = i + 1;
+}
+print(somma,"\n");
+
+// Calcolo del fattoriale con ciclo while
+n = 5;
+fatt = 1;
+while (n > 1) {
+    fatt = fatt * n;
+    n = n - 1;
+}
+print(fatt,"\n");

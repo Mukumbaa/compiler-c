@@ -1,0 +1,30 @@
+// EXPECT:
+// 1
+// 0
+// 1
+// 0
+// 100
+// 200
+
+// Test AND (&&)
+print(1 && 1,"\n");
+print(1 && 0,"\n");
+
+// Test OR (||)
+print(0 || 1,"\n");
+print(0 || 0,"\n");
+
+// Test in condizioni composte con precedenze
+x = 15;
+if (x >= 10 && x <= 20) {
+    print(100,"\n");
+} else {
+    print(0,"\n");
+}
+
+y = 5;
+if (y == 1 || y == 5) {
+    print(200,"\n");
+} else {
+    print(0,"\n");
+}

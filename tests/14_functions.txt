@@ -1,0 +1,32 @@
+// EXPECT:
+// 25
+// 5
+// 120
+
+// 1. Funzione con 1 parametro
+fn quadrato(x) {
+    return x * x;
+}
+
+// 2. Funzione con 2 parametri
+fn ipotenusa(a, b) {
+    return (a ^ 2 + b ^ 2) ^ 0.5;
+}
+
+// 3. Funzione ricorsiva (il fattoriale chiama se stesso!)
+fn fattoriale(n) {
+    if (n <= 1) {
+        return 1;
+    }
+    return n * fattoriale(n - 1);
+}
+
+// Codice principale che chiama le funzioni:
+q = quadrato(5);
+print(q,"\n");
+
+h = ipotenusa(3, 4);
+print(h,"\n");
+
+f = fattoriale(5);
+print(f,"\n");

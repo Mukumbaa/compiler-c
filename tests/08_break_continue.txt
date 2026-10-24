@@ -1,0 +1,21 @@
+// EXPECT:
+// 1
+// 2
+// 4
+// 5
+i = 0;
+while (i < 10) {
+    i = i + 1;
+    
+    // Salta il 3
+    if (i == 3) {
+        continue;
+    }
+    
+    // Si ferma al 6 (quindi 6 non viene stampato)
+    if (i == 6) {
+        break;
+    }
+    
+    print(i,"\n");
+}

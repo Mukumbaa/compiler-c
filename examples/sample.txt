@@ -1,0 +1,110 @@
+// ==============================================================
+//           CONSOLE SCIENTIFICA INTERATTIVA (COMPILERC)
+// ==============================================================
+
+/* 1. Funzione Ricorsiva: testa chiamate annidate e stack frame */
+fn fib(n) {
+    if (n <= 0) {
+        return 0;
+    }
+    if (n == 1) {
+        return 1;
+    }
+    // Ricorsione multipla: valuta due rami e li somma!
+    return fib(n - 1) + fib(n - 2);
+}
+
+/* 2. Funzione a 4 parametri: Geometria analitica (Pitagora) */
+fn distanza(x1, y1, x2, y2) {
+    dx = x2 - x1;
+    dy = y2 - y1;
+    // Formula: sqrt(dx^2 + dy^2)
+    return (dx ^ 2 + dy ^ 2) ^ 0.5;
+}
+
+/* 3. Simulatore Fisico: Moto Parabolico con gravita' */
+fn simula_proiettile(v0) {
+    t = 0;
+    dt = 0.5;
+    g = 9.81;
+    max_quota = 0;
+
+    print("--- Inizio traiettoria ---");
+    while (1 == 1) {
+        // Formula: y(t) = v0*t - 0.5*g*t^2
+        quota = (v0 * t) - (0.5 * g * (t ^ 2));
+
+        if (quota > max_quota) {
+            max_quota = quota;
+        }
+
+        // Se tocca il suolo dopo essere partito, ferma la simulazione con BREAK
+        if (t > 0 && quota <= 0) {
+            print("Impatto al suolo!");
+            break;
+        }
+
+        print("Tempo: ", t, "s | Quota: ", quota);
+        t = t + dt;
+    }
+    return max_quota;
+}
+
+// ==============================================================
+//                     PROGRAMMA PRINCIPALE
+// ==============================================================
+
+print("==========================================");
+print("     BENVENUTO NEL TUO COMPILATORE!       ");
+print("==========================================");
+
+attivo = 1;
+while (attivo == 1) {
+    print("Scegli un'opzione:");
+    print("1: Fibonacci Ricorsivo");
+    print("2: Simulatore di Lancio (Fisica)");
+    print("3: Distanza tra due coordinate (x, y)");
+    print("0: Esci dal programma");
+
+    scan(scelta);
+
+    // OPZIONE 1: FIBONACCI
+    if (scelta == 1) {
+        print("Calcolo di Fibonacci.");
+        scan(val);
+        // Validazione con OR logico
+        if (val < 0 || val > 15) {
+            print("Errore: inserisci un numero tra 0 e 15!");
+        } else {
+            risultato = fib(val);
+            print("Fibonacci di ", val, " e': ", risultato);
+        }
+    }
+
+    // OPZIONE 2: FISICA
+    if (scelta == 2) {
+        print("Inserisci la velocita' iniziale verticale (m/s):");
+        scan(vel);
+        apice = simula_proiettile(vel);
+        print("Quota massima raggiunta: ", apice);
+    }
+
+    // OPZIONE 3: DISTANZA 2D
+    if (scelta == 3) {
+        print("Inserisci le coordinate dei due punti:");
+        scan(x1);
+        scan(y1);
+        scan(x2);
+        scan(y2);
+        d = distanza(x1, y1, x2, y2);
+        print("La distanza euclidea e': ", d);
+    }
+
+    // OPZIONE 0: USCITA
+    if (scelta == 0) {
+        print("Grazie per aver usato il compilatore. Arrivederci!");
+        break;
+    }
+
+    print("------------------------------------------");
+}

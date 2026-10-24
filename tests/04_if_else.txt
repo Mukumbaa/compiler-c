@@ -1,0 +1,11 @@
+// EXPECT:
+// 7
+// 100
+x = 10;
+if (x > 5) {
+    x = x - 3;
+    print(x,"\n");
+} else {
+    print(0,"\n");
+}
+print(100,"\n");
