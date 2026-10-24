@@ -1,6 +1,3 @@
-# README.md
-
-```markdown
 # compilerc
 
 A lightweight ahead-of-time (AOT) compiler written in C that translates a custom procedural, dynamically-typed imperative language directly into **x86-64 Intel assembly**, linked via GCC.
@@ -221,5 +218,4 @@ Statement 1
 │   └── token.c       # Token string helpers
 ├── makefile          # Build configuration
 └── README.md
-```
 
