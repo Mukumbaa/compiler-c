@@ -160,8 +160,8 @@ make
 |---|---|---|
 | `-o <file>` | `--output <file>` | Specify output binary file name (default: source file name without extension). |
 | `-s` | `--save-asm` | Keep generated `.s` assembly file after linking. |
-| `-pl` | `--print-lexer` | Print token stream produced by the lexer to `stdout`. |
-| `-pa` | `--print-ast` | Print visual ASCII representation of the AST. |
+| `-l` | `--print-lexer` | Print token stream produced by the lexer to `stdout`. |
+| `-a` | `--print-ast` | Print visual ASCII representation of the AST. |
 | `-h` | `--help` | Display usage instructions and exit. |
 
 ### Examples
@@ -180,7 +180,7 @@ cat test_bin.s
 
 **Debug parsing using the visual AST dump:**
 ```bash
-./compilerc examples/test.src -pa
+./compilerc examples/test.src -a
 ```
 
 *Example AST output:*

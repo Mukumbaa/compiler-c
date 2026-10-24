@@ -104,18 +104,18 @@ int main(int argc, char **argv){
   argv_bind_pos(&p, "source", &source_file, true, NULL, "Source file to compile.");
   argv_bind_str(&p, "-o", "--output", &file_out, false, NULL, "Output file name.");
   argv_bind_bool(&p, "-s", "--save-asm", &save_asm, "Save asm file.");
-  argv_bind_bool(&p, "-pl", "--print-lexer", &print_tokens, "Print tokens produced by the lexer.");
-  argv_bind_bool(&p, "-pa", "--print-ast", &print_ast, "Print the AST graph produced by the parser.");
+  argv_bind_bool(&p, "-l", "--print-lexer", &print_tokens, "Print tokens produced by the lexer.");
+  argv_bind_bool(&p, "-a", "--print-ast", &print_ast, "Print the AST graph produced by the parser.");
 
   CliStatus status = argv_parse(&p, argc, argv);
-
   if (status == ARGV_HELP_REQUESTED) {
     argv_free(&p);
     return 0;
   }
   if (status != ARGV_OK) {
+    fprintf(stderr, "Error in command line: %s\nUse '%s --help'.\n", argv_get_error(&p), argv[0]);
     argv_free(&p);
-    return -1;
+    return 1;
   }
 
 
