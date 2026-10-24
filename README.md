@@ -144,12 +144,10 @@ Source Code (.txt / .src)
 Clone the repository and run `make`:
 
 ```bash
-git clone https://github.com/your-username/compilerc.git
-cd compilerc
+git clone https://github.com/Mukumbaa/compiler-c.git
+cd compiler-c
 make
 ```
-
-The resulting binary will be placed at the project root: `./compilerc`.
 
 ---
 
